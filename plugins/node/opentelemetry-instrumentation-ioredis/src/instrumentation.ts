@@ -119,7 +119,7 @@ export class IORedisInstrumentation extends InstrumentationBase<any> {
           [SemanticAttributes.DB_SYSTEM]: DbSystemValues.REDIS,
           [SemanticAttributes.DB_STATEMENT]: dbStatementSerializer(
             cmd.name,
-            cmd.args
+            cmd.args.flat()
           ),
         },
       });
